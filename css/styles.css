@@ -27,7 +27,7 @@ p{
 .container{
     display: grid;
     max-width: 1200px;
-    width: 100v%;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
     "nav nav nav"
