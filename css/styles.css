@@ -172,12 +172,3 @@ p{
     grid-area: footer;
     border-radius: 0 0 40px 40px;
 }
-
-
-/* Estilos específicos para dispositivos con Dynamic Island */
-@media (max-width: 428px) {
-    .contenedor {
-      /* Estilos para dispositivos con Dynamic Island */
-      padding-bottom: env(safe-area-inset-bottom); /* Espacio para el Dynamic Island */
-    }
-}
