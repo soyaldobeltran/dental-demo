@@ -1,0 +1,182 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    
+    margin: 0 auto;
+    padding: 0px;
+    font-family: Montserrat ,Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body{
+    background: url('/assets/img/header.webp') no-repeat center /cover fixed;
+    margin-bottom: 40px;
+}
+br{
+    height: 10rem;
+}
+h3{
+    color: #2196F3;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+p{
+    font-weight: 500;
+}
+.container{
+    display: grid;
+    max-width: 1200px;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    "nav nav nav"
+    "header header header"
+    "content content content"
+    "footer footer footer"; 
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: center;
+    background-color: white;
+    z-index: 1;
+    animation: enhance-header linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 200px;
+    grid-area: nav;
+}
+.navbar-container{
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity .5s ease;
+    gap: 20px;
+    width: 200px;
+    padding: 30px;
+    background-color: white;
+    list-style: none;
+    text-decoration: none;
+    left: -50%;
+    top: 110px;
+    position: fixed;
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.150);
+    
+}
+.navbar-container a{
+    text-decoration: none;
+}
+.navbar-container a:hover{
+    color: #2196F3;
+}
+.tonggle{
+    transform: rotate(0deg);
+    animation: alternate-reverse;
+    transition: transform 0.5s ease;
+}
+.active{
+    transform: rotate(-45deg);
+    animation: alternate-reverse;
+    transition: transform 0.5s ease;
+}
+.nav-active{
+    left: 6%;
+    opacity: 1;
+    transition: opacity .5s ease;
+    
+}
+
+@keyframes enhance-header{
+    to {
+
+        margin-top: 22px;
+        width: 90%;
+        box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.150);
+        border-radius: 50px;
+    }
+}
+.nav-logo, .nav-tonggle, .btn-agenda{
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+}
+.btn-agenda{
+    border: 1px solid #2196F3;
+    border-radius: 10px;
+    background-color: transparent;
+    font-weight: 600;
+    color: #424242;
+}
+.btn-agenda:hover{
+    background-color: #2196F3;
+    color: white;
+}
+.nav-tonggle{
+    color: #424242;
+}
+
+.img-header{
+    width: 100%;
+    height: 80vh;
+    grid-area: header;
+    
+
+}
+.section-info{
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.150);
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    background-color: white;
+    padding: 40px;
+    width: 100%;
+    height: auto;
+    grid-area: content;
+}
+
+.container-servicios{
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.container-servicios div{
+    color: white;
+    text-align: start;
+    display: flex;
+    padding: 30px;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    background: rgb(122, 201, 244);
+    background: radial-gradient(circle, rgb(121, 176, 244) 0%, rgba(148,187,233,1) 100%);
+    
+}
+
+
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: #2196F3;
+    grid-area: footer;
+    border-radius: 0 0 40px 40px;
+}
+
+
+/* Estilos específicos para dispositivos con Dynamic Island */
+@media (max-width: 428px) {
+    .contenedor {
+      /* Estilos para dispositivos con Dynamic Island */
+      padding-bottom: env(safe-area-inset-bottom); /* Espacio para el Dynamic Island */
+    }
+}
