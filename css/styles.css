@@ -10,6 +10,7 @@
     box-sizing: border-box;
 }
 body{
+    width: 100vw;
     background: url('/assets/img/header.webp') no-repeat center /cover fixed;
     margin-bottom: 40px;
 }
